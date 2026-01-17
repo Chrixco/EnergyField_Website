@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Energy Field - The strategic collectable card game that challenges your ability to build circuits, collect energy, and use inventions to outsmart your opponents. Play with 2-8 players, ages 13+.">
+    <meta name="keywords" content="Energy Field, card game, strategy game, collectable card game, CCG, gaming, circuits, inventions, energy, scientists, board game, multiplayer, strategic gameplay, turn-based">
+    <meta name="author" content="Energy Field Game Team">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <link rel="canonical" href="https://chrixco.github.io/EnergyField_Website/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Energy Field">
+    <meta property="og:title" content="Energy Field - Strategic Collectable Card Game">
+    <meta property="og:description" content="Master the placement of circuits, inventions, and energies in this exhilarating strategic card game. Join thousands of players in tactical battles that test your puzzle-solving skills.">
+    <meta property="og:image" content="https://chrixco.github.io/EnergyField_Website/assets/images/og-image.png">
+    <meta property="og:image:alt" content="Energy Field Card Game - Strategic gameplay with circuits and inventions">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://chrixco.github.io/EnergyField_Website/">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@EnergyFieldGame">
+    <meta name="twitter:creator" content="@EnergyFieldGame">
+    <meta name="twitter:title" content="Energy Field - Strategic Collectable Card Game">
+    <meta name="twitter:description" content="Build circuits, harness energy, deploy inventions. The ultimate strategic card game experience.">
+    <meta name="twitter:image" content="https://chrixco.github.io/EnergyField_Website/assets/images/og-image.png">
+    <meta name="twitter:image:alt" content="Energy Field strategic card game screenshot">
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#00D4FF">
+    <meta name="msapplication-TileColor" content="#060507">
+    <meta name="msapplication-TileImage" content="./assets/images/ms-icon-144x144.png">
+
+    <title>Energy Field - Strategic Collectable Card Game | Official Website</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons and Favicons -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="./assets/manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/neon-effects.css">
+
+    <!-- Scroll animations library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Energy Field",
+        "alternateName": "Energy Field Strategic Card Game",
+        "description": "A strategic collectable card game that challenges your ability to build circuits, collect energy, and use inventions to outsmart your opponents.",
+        "genre": "Strategy Card Game",
+        "gameItem": [
+            {
+                "@type": "Thing",
+                "name": "Energy Cards"
+            },
+            {
+                "@type": "Thing",
+                "name": "Circuit Cards"
+            },
+            {
+                "@type": "Thing",
+                "name": "Scientist Cards"
+            },
+            {
+                "@type": "Thing",
+                "name": "Invention Cards"
+            }
+        ],
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 8
+        },
+        "typicalAgeRange": "13+",
+        "playTime": "PT30M/PT60M",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250",
+            "bestRating": "5"
+        },
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Energy Field Game Team",
+            "url": "https://chrixco.github.io/EnergyField_Website/"
+        },
+        "url": "https://chrixco.github.io/EnergyField_Website/",
+        "image": "https://chrixco.github.io/EnergyField_Website/assets/images/og-image.png",
+        "sameAs": [
+            "https://github.com/Chrixco/EnergyField_Website"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Energy Field",
+        "url": "https://chrixco.github.io/EnergyField_Website/",
+        "description": "Official website for Energy Field strategic collectable card game",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Energy Field Game Team"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://chrixco.github.io/EnergyField_Website/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="energy-orb">
+                <div class="orb-core"></div>
+                <div class="orb-ring ring-1"></div>
+                <div class="orb-ring ring-2"></div>
+                <div class="orb-ring ring-3"></div>
+            </div>
+            <h2 class="loading-text">INITIALIZING ENERGY FIELD</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text neon-blue">ENERGY</span>
+                <span class="logo-text neon-purple">FIELD</span>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link neon-hover">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link neon-hover">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link neon-hover">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link neon-hover">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#modes" class="nav-link neon-hover">Game Modes</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#download" class="nav-link neon-hover">Download</a>
+                </li>
+            </ul>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="energy-particles"></div>
+            <div class="circuit-lines"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up">
+                <span class="title-main neon-blue">ENERGY</span>
+                <span class="title-main neon-purple">FIELD</span>
+            </h1>
+
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                Master the strategic placement of circuits, inventions, and energies to outsmart your opponents in this exhilarating collectable card game.
+            </p>
+
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
+                <button class="cta-button primary-glow">
+                    <span>DOWNLOAD NOW</span>
+                    <div class="button-energy"></div>
+                </button>
+                <button class="cta-button secondary-glow">
+                    <span>WATCH TRAILER</span>
+                    <div class="button-energy"></div>
+                </button>
+            </div>
+
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="900">
+                <div class="stat-item">
+                    <span class="stat-number neon-yellow">100K+</span>
+                    <span class="stat-label">Players</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number neon-blue">500+</span>
+                    <span class="stat-label">Cards</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number neon-purple">50+</span>
+                    <span class="stat-label">Strategies</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual" data-aos="zoom-in" data-aos-delay="400">
+            <div class="floating-cards">
+                <div class="card-float card-1">
+                    <div class="card-content">
+                        <div class="card-icon">⚡</div>
+                        <h4>Energy</h4>
+                    </div>
+                </div>
+                <div class="card-float card-2">
+                    <div class="card-content">
+                        <div class="card-icon">🔌</div>
+                        <h4>Circuit</h4>
+                    </div>
+                </div>
+                <div class="card-float card-3">
+                    <div class="card-content">
+                        <div class="card-icon">⚙️</div>
+                        <h4>Invention</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-atom">
+                <img src="./assets/images/atom.png" alt="Energy Atom" class="atom-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">About Energy Field</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p class="about-description">
+                        Energy Field is a turn-based collectable card game that uses energy, circuits, scientists and inventions
+                        to create a cooperative network with your opponent to have the most points at the end to win the game.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon neon-blue">⚡</div>
+                            <h3>Strategic Gameplay</h3>
+                            <p>Master the placement of circuits, inventions, and energies in this exciting game of strategy and puzzle-solving.</p>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon neon-purple">🔬</div>
+                            <h3>Unique Scientists</h3>
+                            <p>Choose your scientist character with unique abilities and create powerful connections across the energy field.</p>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon neon-yellow">🎯</div>
+                            <h3>Multiple Game Modes</h3>
+                            <p>From competitive 60-card format to casual 100-card games and exciting craft mode tournaments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="game-showcase">
+                        <div class="showcase-image">
+                            <img src="./assets/images/electron-nucleus.png" alt="Energy Field Game Board" loading="lazy">
+                            <div class="image-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Lore Section -->
+            <div class="game-lore" data-aos="fade-up" data-aos-delay="300">
+                <div class="lore-content">
+                    <h3 class="lore-title neon-purple">The Story Behind Energy Field</h3>
+                    <div class="lore-text">
+                        <p>
+                            In the near future, humanity has discovered a revolutionary form of energy that flows through specialized circuits and can be manipulated by brilliant scientists. This energy, known as the "Energy Field," holds the power to transform civilization.
+                        </p>
+                        <p>
+                            As a master inventor, you must compete with other scientists to create the most efficient energy networks. Using your knowledge of circuits, the assistance of renowned researchers, and groundbreaking inventions, you'll harness the Energy Field to power humanity's greatest achievements.
+                        </p>
+                        <p>
+                            But beware – in this world of scientific collaboration and competition, only the most strategic mind will emerge as the ultimate energy architect. Will you master the field, or will it master you?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lore-stats">
+                    <div class="lore-stat">
+                        <span class="lore-number neon-blue">2089</span>
+                        <span class="lore-label">Year of Discovery</span>
+                    </div>
+                    <div class="lore-stat">
+                        <span class="lore-number neon-purple">12</span>
+                        <span class="lore-label">Scientist Factions</span>
+                    </div>
+                    <div class="lore-stat">
+                        <span class="lore-number neon-yellow">∞</span>
+                        <span class="lore-label">Possibilities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">Game Features</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-blue">🔋</div>
+                    </div>
+                    <h3>Energy Cards</h3>
+                    <p>Power your inventions with energy cards that provide the necessary fuel for your strategic plays.</p>
+                    <div class="feature-preview">
+                        <div class="mini-card energy-card">
+                            <span class="card-energy-icon">⚡</span>
+                            <span class="card-value">5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-purple">🔌</div>
+                    </div>
+                    <h3>Circuit Cards</h3>
+                    <p>Connect your scientists and inventions with unique circuit cards to create powerful networks.</p>
+                    <div class="feature-preview">
+                        <div class="mini-card circuit-card">
+                            <span class="card-circuit-icon">🔌</span>
+                            <span class="card-name">Power Link</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-yellow">👨‍🔬</div>
+                    </div>
+                    <h3>Scientist Cards</h3>
+                    <p>Choose from unique scientist characters, each with their own special abilities and strategic advantages.</p>
+                    <div class="feature-preview">
+                        <div class="mini-card scientist-card">
+                            <span class="card-scientist-icon">👨‍🔬</span>
+                            <span class="card-name">Dr. Tesla</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-orange">⚙️</div>
+                    </div>
+                    <h3>Invention Cards</h3>
+                    <p>Deploy powerful inventions that activate when connected to your energy network.</p>
+                    <div class="feature-preview">
+                        <div class="mini-card invention-card">
+                            <span class="card-invention-icon">⚙️</span>
+                            <span class="card-name">Generator</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-green">🛠️</div>
+                    </div>
+                    <h3>Tool Cards</h3>
+                    <p>Use specialized tools to gain strategic advantages and outmaneuver your opponents.</p>
+                </div>
+
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <div class="icon-glow neon-pink">🏆</div>
+                    </div>
+                    <h3>Victory Points</h3>
+                    <p>Accumulate victory points through strategic play and claim your place as the ultimate inventor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">Game Gallery</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Images will be dynamically loaded here -->
+            </div>
+
+            <div class="gallery-modal" id="gallery-modal">
+                <div class="modal-backdrop"></div>
+                <div class="modal-content">
+                    <img id="modal-image" src="" alt="">
+                    <button class="modal-close">&times;</button>
+                    <button class="modal-prev">&#8249;</button>
+                    <button class="modal-next">&#8250;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modes Section -->
+    <section id="modes" class="game-modes">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">Game Modes</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="modes-grid">
+                <div class="mode-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="mode-header">
+                        <div class="mode-icon neon-blue">⚔️</div>
+                        <h3>Competitive (60 Cards)</h3>
+                    </div>
+                    <div class="mode-description">
+                        <p>Face off in intense one-on-one battles with carefully constructed 60-card decks.</p>
+                        <ul class="mode-features">
+                            <li>Strategic deck building</li>
+                            <li>Tournament ready</li>
+                            <li>Ranked gameplay</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mode-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="mode-header">
+                        <div class="mode-icon neon-purple">🎮</div>
+                        <h3>Casual (100 Cards)</h3>
+                    </div>
+                    <div class="mode-description">
+                        <p>Enjoy relaxed gameplay with friends using expanded 100-card decks.</p>
+                        <ul class="mode-features">
+                            <li>More deck variety</li>
+                            <li>Social gameplay</li>
+                            <li>Extended matches</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mode-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="mode-header">
+                        <div class="mode-icon neon-yellow">👥</div>
+                        <h3>Multiplayer (4 Players)</h3>
+                    </div>
+                    <div class="mode-description">
+                        <p>Team up or compete in thrilling 4-player battles with dynamic alliances.</p>
+                        <ul class="mode-features">
+                            <li>Team cooperation</li>
+                            <li>Free-for-all chaos</li>
+                            <li>Complex strategies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mode-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="mode-header">
+                        <div class="mode-icon neon-orange">🎲</div>
+                        <h3>Draft Mode</h3>
+                    </div>
+                    <div class="mode-description">
+                        <p>Build your deck on the fly with exciting booster pack draft tournaments.</p>
+                        <ul class="mode-features">
+                            <li>Real-time deck building</li>
+                            <li>Tournament format</li>
+                            <li>Adaptive strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content" data-aos="fade-up">
+                <h2 class="download-title neon-glow">Ready to Enter the Energy Field?</h2>
+                <p class="download-subtitle">
+                    Join thousands of players in strategic battles that will test your tactical thinking and puzzle-solving skills.
+                </p>
+
+                <div class="download-buttons">
+                    <button class="download-btn primary-glow">
+                        <span class="btn-text">Download Game Rules</span>
+                        <span class="btn-subtext">PDF • 2.3MB</span>
+                        <div class="button-energy"></div>
+                    </button>
+
+                    <button class="download-btn secondary-glow">
+                        <span class="btn-text">Get Started Guide</span>
+                        <span class="btn-subtext">Quick Start Tutorial</span>
+                        <div class="button-energy"></div>
+                    </button>
+                </div>
+
+                <div class="download-info">
+                    <div class="info-item">
+                        <span class="info-label">Players:</span>
+                        <span class="info-value neon-blue">2-8</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Age:</span>
+                        <span class="info-value neon-purple">13+</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time:</span>
+                        <span class="info-value neon-yellow">30-60 min</span>
+                    </div>
+                </div>
+
+                <div class="social-proof" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial">
+                        <p class="testimonial-text">
+                            "Energy Field combines the strategic depth of classic card games with innovative energy mechanics. Every game feels fresh and challenging!"
+                        </p>
+                        <span class="testimonial-author">- Alex Chen, Board Game Reviewer</span>
+                    </div>
+
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon neon-blue">🎮</span>
+                            <span class="stat-count">10K+</span>
+                            <span class="stat-text">Active Players</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon neon-purple">⭐</span>
+                            <span class="stat-count">4.8/5</span>
+                            <span class="stat-text">Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon neon-yellow">🏆</span>
+                            <span class="stat-count">50+</span>
+                            <span class="stat-text">Tournaments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text neon-blue">ENERGY</span>
+                        <span class="logo-text neon-purple">FIELD</span>
+                    </div>
+                    <p class="footer-description">
+                        A strategic collectable card game that challenges your ability to build circuits,
+                        collect energy, and use inventions to outsmart your opponents.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" class="neon-hover">Home</a></li>
+                        <li><a href="#about" class="neon-hover">About</a></li>
+                        <li><a href="#features" class="neon-hover">Features</a></li>
+                        <li><a href="#gallery" class="neon-hover">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Game Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#modes" class="neon-hover">Game Modes</a></li>
+                        <li><a href="#download" class="neon-hover">Download</a></li>
+                        <li><a href="#" class="neon-hover">Rules</a></li>
+                        <li><a href="#" class="neon-hover">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link neon-hover" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link neon-hover" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="social-link neon-hover" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://github.com/Chrixco/EnergyField_Website" class="social-link neon-hover" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="contact-info">
+                        <p class="contact-item">
+                            <i class="fas fa-envelope neon-blue"></i>
+                            <span>contact@energyfield.game</span>
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-users neon-purple"></i>
+                            <span>Join our community</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Stay Updated</h3>
+                    <p class="newsletter-description">
+                        Get the latest news, updates, and tournament announcements.
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn primary-glow">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Energy Field. All rights reserved.</p>
+                <div class="footer-made-with">
+                    Made with <span class="neon-pink">⚡</span> by Energy Field Team
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top neon-hover">
+        <span>↑</span>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/gallery.js"></script>
+</body>
+</html>

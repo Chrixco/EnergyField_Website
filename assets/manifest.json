@@ -1,0 +1,27 @@
+{
+    "name": "Energy Field - Strategic Card Game",
+    "short_name": "Energy Field",
+    "description": "Strategic collectable card game - build circuits, harness energy, deploy inventions",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#060507",
+    "theme_color": "#00D4FF",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "icons": [
+        {
+            "src": "./images/favicon.ico",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./images/apple-touch-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["games", "entertainment", "strategy"]
+}
