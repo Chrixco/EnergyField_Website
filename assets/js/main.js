@@ -182,6 +182,9 @@ function initializeScrollEffects() {
 
 // Initialize Animations
 function initializeAnimations() {
+    // Initialize interactive floating cards
+    initializeFloatingCards();
+
     // Floating cards animation
     const floatingCards = document.querySelectorAll('.card-float');
     floatingCards.forEach((card, index) => {
@@ -548,9 +551,224 @@ document.head.appendChild(style);
 // Initialize performance logging
 window.addEventListener('load', logPerformance);
 
+// Interactive Floating Cards with Mouse Tracking
+function initializeFloatingCards() {
+    const heroSection = document.querySelector('.hero');
+    const floatingCardsContainer = document.querySelector('.floating-cards');
+    const floatingCards = document.querySelectorAll('.card-float');
+
+    if (!heroSection || !floatingCardsContainer || floatingCards.length === 0) {
+        return;
+    }
+
+    let isMouseInside = false;
+    let animationFrameId = null;
+
+    // Mouse tracking variables
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetRotations = [];
+
+    // Initialize target rotations for each card
+    floatingCards.forEach(() => {
+        targetRotations.push({ x: 0, y: 0, z: 0 });
+    });
+
+    // Mouse move handler
+    function handleMouseMove(e) {
+        if (!isMouseInside) return;
+
+        const rect = heroSection.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        // Normalize mouse position (-1 to 1)
+        mouseX = (e.clientX - centerX) / (rect.width / 2);
+        mouseY = (e.clientY - centerY) / (rect.height / 2);
+
+        // Calculate rotations for each card based on mouse position
+        floatingCards.forEach((card, index) => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenterX = cardRect.left + cardRect.width / 2;
+            const cardCenterY = cardRect.top + cardRect.height / 2;
+
+            // Distance from mouse to card center
+            const deltaX = (e.clientX - cardCenterX) / 100;
+            const deltaY = (e.clientY - cardCenterY) / 100;
+
+            // Calculate rotation based on mouse position and card position
+            const maxRotation = 25; // Maximum rotation in degrees
+            const rotationY = Math.max(-maxRotation, Math.min(maxRotation, deltaX * -1));
+            const rotationX = Math.max(-maxRotation, Math.min(maxRotation, deltaY));
+
+            // Add some Z rotation for extra dynamism
+            const rotationZ = Math.sin(mouseX * Math.PI) * 5;
+
+            targetRotations[index] = {
+                x: rotationX,
+                y: rotationY,
+                z: rotationZ
+            };
+        });
+    }
+
+    // Smooth animation loop
+    function animateCards() {
+        floatingCards.forEach((card, index) => {
+            const current = {
+                x: parseFloat(card.dataset.currentX) || 0,
+                y: parseFloat(card.dataset.currentY) || 0,
+                z: parseFloat(card.dataset.currentZ) || 0
+            };
+
+            const target = targetRotations[index];
+            const ease = 0.1; // Easing factor for smooth animation
+
+            // Lerp to target rotation
+            current.x += (target.x - current.x) * ease;
+            current.y += (target.y - current.y) * ease;
+            current.z += (target.z - current.z) * ease;
+
+            // Store current values
+            card.dataset.currentX = current.x;
+            card.dataset.currentY = current.y;
+            card.dataset.currentZ = current.z;
+
+            // Apply transform
+            const baseTransform = getComputedStyle(card).transform;
+            let newTransform = `rotateX(${current.x}deg) rotateY(${current.y}deg) rotateZ(${current.z}deg)`;
+
+            // Preserve any existing transforms like translate
+            if (baseTransform && baseTransform !== 'none') {
+                // Extract translate values and combine with rotation
+                const translateMatch = baseTransform.match(/translate[3d]*\([^)]+\)/g);
+                const scaleMatch = baseTransform.match(/scale[3d]*\([^)]+\)/g);
+
+                if (translateMatch) {
+                    newTransform += ` ${translateMatch.join(' ')}`;
+                }
+                if (scaleMatch) {
+                    newTransform += ` ${scaleMatch.join(' ')}`;
+                }
+            }
+
+            card.style.transform = newTransform;
+        });
+
+        if (isMouseInside) {
+            animationFrameId = requestAnimationFrame(animateCards);
+        }
+    }
+
+    // Reset cards to original position
+    function resetCards() {
+        targetRotations.forEach((target) => {
+            target.x = 0;
+            target.y = 0;
+            target.z = 0;
+        });
+
+        // Continue animation to smoothly return to original position
+        if (!animationFrameId) {
+            animateCards();
+        }
+    }
+
+    // Mouse enter/leave handlers
+    heroSection.addEventListener('mouseenter', () => {
+        isMouseInside = true;
+        floatingCardsContainer.style.cursor = 'none'; // Hide cursor for immersive effect
+
+        if (!animationFrameId) {
+            animateCards();
+        }
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+        isMouseInside = false;
+        floatingCardsContainer.style.cursor = 'default';
+        resetCards();
+
+        // Stop animation after cards return to position
+        setTimeout(() => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        }, 1000);
+    });
+
+    // Mouse move handler
+    heroSection.addEventListener('mousemove', throttle(handleMouseMove, 16)); // ~60fps
+
+    // Click handlers for individual cards
+    floatingCards.forEach((card, index) => {
+        card.style.cursor = 'pointer';
+        card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+
+        card.addEventListener('click', () => {
+            // Add click effect
+            card.style.transform += ' scale(1.1)';
+            card.style.boxShadow = '0 12px 25px rgba(0, 212, 255, 0.3)';
+
+            // Create energy burst effect
+            createEnergyBurst(card);
+
+            // Show card info
+            const cardType = card.querySelector('.card-content h4')?.textContent || 'Card';
+            showNotification(`${cardType} card selected! ⚡`, 'success');
+
+            // Reset after animation
+            setTimeout(() => {
+                card.style.transform = card.style.transform.replace(' scale(1.1)', '');
+                card.style.boxShadow = '';
+            }, 300);
+        });
+
+        // Add hover glow effect
+        card.addEventListener('mouseenter', () => {
+            const colors = ['rgba(0, 212, 255, 0.2)', 'rgba(138, 43, 226, 0.2)', 'rgba(255, 215, 0, 0.2)'];
+            card.style.boxShadow = `0 8px 20px ${colors[index % colors.length]}`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.boxShadow = '';
+        });
+    });
+}
+
+// Create energy burst effect
+function createEnergyBurst(element) {
+    const burst = document.createElement('div');
+    burst.className = 'energy-burst';
+    burst.style.cssText = `
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: energyBurst 0.6s ease-out forwards;
+        z-index: 10;
+    `;
+
+    element.style.position = 'relative';
+    element.appendChild(burst);
+
+    setTimeout(() => {
+        if (burst.parentNode) {
+            burst.parentNode.removeChild(burst);
+        }
+    }, 600);
+}
+
 // Export functions for use in other scripts
 window.EnergyField = {
     showNotification,
     smoothScrollToSection,
-    createRippleEffect
+    createRippleEffect,
+    initializeFloatingCards
 };

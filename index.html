@@ -183,7 +183,13 @@
                     <a href="#modes" class="nav-link neon-hover">Game Modes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#download" class="nav-link neon-hover">Download</a>
+                    <a href="#rules" class="nav-link neon-hover">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#publishers" class="nav-link neon-hover">Publishers</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#community" class="nav-link neon-hover">Community</a>
                 </li>
             </ul>
 
@@ -527,30 +533,110 @@
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="download">
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
         <div class="container">
-            <div class="download-content" data-aos="fade-up">
-                <h2 class="download-title neon-glow">Ready to Enter the Energy Field?</h2>
-                <p class="download-subtitle">
-                    Join thousands of players in strategic battles that will test your tactical thinking and puzzle-solving skills.
-                </p>
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">Game Rules</h2>
+                <div class="section-divider"></div>
+            </div>
 
-                <div class="download-buttons">
-                    <button class="download-btn primary-glow">
-                        <span class="btn-text">Download Game Rules</span>
-                        <span class="btn-subtext">PDF • 2.3MB</span>
-                        <div class="button-energy"></div>
-                    </button>
+            <div class="rules-content">
+                <div class="rules-overview" data-aos="fade-up">
+                    <h3 class="rules-title neon-blue">Game Overview</h3>
+                    <p class="rules-description">
+                        Energy Field is a turn-based strategic card game where 2-8 players compete to create the most efficient energy networks using circuits, scientists, inventions, and energy cards. Victory is achieved by accumulating the most points through strategic placement and network optimization.
+                    </p>
+                </div>
 
-                    <button class="download-btn secondary-glow">
-                        <span class="btn-text">Get Started Guide</span>
-                        <span class="btn-subtext">Quick Start Tutorial</span>
+                <div class="rules-grid">
+                    <div class="rule-section" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="rule-header">
+                            <span class="rule-icon neon-blue">🎯</span>
+                            <h4>Game Setup</h4>
+                        </div>
+                        <ul class="rule-list">
+                            <li>Each player receives a starting hand of 7 cards</li>
+                            <li>Place energy source cards in the center field</li>
+                            <li>Shuffle deck and place draw pile face down</li>
+                            <li>Determine first player randomly</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-section" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="rule-header">
+                            <span class="rule-icon neon-purple">⚡</span>
+                            <h4>Turn Structure</h4>
+                        </div>
+                        <ul class="rule-list">
+                            <li><strong>Draw Phase:</strong> Draw 2 cards from your deck</li>
+                            <li><strong>Action Phase:</strong> Play cards and activate abilities</li>
+                            <li><strong>Build Phase:</strong> Place circuits and inventions</li>
+                            <li><strong>Energy Phase:</strong> Collect and distribute energy</li>
+                            <li><strong>End Phase:</strong> Discard excess cards (max 10)</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-section" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="rule-header">
+                            <span class="rule-icon neon-yellow">🔌</span>
+                            <h4>Circuit Building</h4>
+                        </div>
+                        <ul class="rule-list">
+                            <li>Connect cards through adjacent placement</li>
+                            <li>Energy flows through connected circuits</li>
+                            <li>Scientists can link non-adjacent cards</li>
+                            <li>Broken circuits lose energy flow</li>
+                        </ul>
+                    </div>
+
+                    <div class="rule-section" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="rule-header">
+                            <span class="rule-icon neon-orange">🏆</span>
+                            <h4>Scoring</h4>
+                        </div>
+                        <ul class="rule-list">
+                            <li>Connected inventions = 3 points each</li>
+                            <li>Active scientists = 2 points each</li>
+                            <li>Completed circuits = 1 point per card</li>
+                            <li>Bonus: Largest network +5 points</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rules-advanced" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="rules-title neon-purple">Advanced Rules</h3>
+                    <div class="advanced-grid">
+                        <div class="advanced-rule">
+                            <h5>Energy Overload</h5>
+                            <p>When a circuit receives more energy than its capacity, it may overload and damage connected cards.</p>
+                        </div>
+                        <div class="advanced-rule">
+                            <h5>Scientist Abilities</h5>
+                            <p>Each scientist has unique abilities that activate when properly connected to your energy network.</p>
+                        </div>
+                        <div class="advanced-rule">
+                            <h5>Tool Cards</h5>
+                            <p>One-time use cards that provide immediate benefits or disrupt opponent strategies.</p>
+                        </div>
+                        <div class="advanced-rule">
+                            <h5>Network Efficiency</h5>
+                            <p>Larger connected networks provide exponential scoring bonuses for optimization.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rules-cta" data-aos="fade-up" data-aos-delay="600">
+                    <button class="rules-btn primary-glow">
+                        <span class="btn-text">Download Full Rulebook</span>
+                        <span class="btn-subtext">Complete PDF Guide</span>
                         <div class="button-energy"></div>
                     </button>
                 </div>
+            </div>
 
-                <div class="download-info">
+            <div class="game-info" data-aos="fade-up" data-aos-delay="700">
+                <div class="info-grid">
                     <div class="info-item">
                         <span class="info-label">Players:</span>
                         <span class="info-value neon-blue">2-8</span>
@@ -563,32 +649,140 @@
                         <span class="info-label">Time:</span>
                         <span class="info-value neon-yellow">30-60 min</span>
                     </div>
+                    <div class="info-item">
+                        <span class="info-label">Complexity:</span>
+                        <span class="info-value neon-orange">Medium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publishers Section -->
+    <section id="publishers" class="publishers">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">For Publishers</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="publishers-content">
+                <div class="publisher-pitch" data-aos="fade-up">
+                    <h3 class="pitch-title neon-blue">Why Partner with Energy Field?</h3>
+                    <p class="pitch-description">
+                        Energy Field represents a unique opportunity in the strategic card game market, combining innovative gameplay mechanics with proven engagement metrics and a passionate community.
+                    </p>
                 </div>
 
-                <div class="social-proof" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial">
-                        <p class="testimonial-text">
-                            "Energy Field combines the strategic depth of classic card games with innovative energy mechanics. Every game feels fresh and challenging!"
-                        </p>
-                        <span class="testimonial-author">- Alex Chen, Board Game Reviewer</span>
+                <div class="publisher-benefits">
+                    <div class="benefit-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="benefit-icon neon-blue">📈</div>
+                        <h4>Market Potential</h4>
+                        <ul>
+                            <li>Proven player engagement with 4.8/5 rating</li>
+                            <li>Growing community of 10K+ active players</li>
+                            <li>Multiple revenue streams (base game, expansions)</li>
+                            <li>Tournament and competitive scene ready</li>
+                        </ul>
                     </div>
 
-                    <div class="community-stats">
-                        <div class="stat-item">
-                            <span class="stat-icon neon-blue">🎮</span>
-                            <span class="stat-count">10K+</span>
-                            <span class="stat-text">Active Players</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-icon neon-purple">⭐</span>
-                            <span class="stat-count">4.8/5</span>
-                            <span class="stat-text">Rating</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-icon neon-yellow">🏆</span>
-                            <span class="stat-count">50+</span>
-                            <span class="stat-text">Tournaments</span>
-                        </div>
+                    <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="benefit-icon neon-purple">🎯</div>
+                        <h4>Strategic Advantage</h4>
+                        <ul>
+                            <li>Unique energy-building mechanics</li>
+                            <li>Scalable from casual to competitive play</li>
+                            <li>Cross-demographic appeal (13+ to adult)</li>
+                            <li>Digital adaptation potential</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="benefit-icon neon-yellow">🚀</div>
+                        <h4>Ready to Launch</h4>
+                        <ul>
+                            <li>Complete rulebook and playtesting done</li>
+                            <li>Professional artwork and design</li>
+                            <li>Marketing materials and website ready</li>
+                            <li>Community management established</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="publisher-cta" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Interested in Publishing Energy Field?</h3>
+                    <p>Contact us for detailed pitch deck, market analysis, and partnership opportunities.</p>
+                    <button class="contact-btn primary-glow">
+                        <span class="btn-text">Contact Publishers Team</span>
+                        <span class="btn-subtext">partnerships@energyfield.game</span>
+                        <div class="button-energy"></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down">
+                <h2 class="section-title neon-glow">Join Our Community</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="community-content">
+                <div class="community-intro" data-aos="fade-up">
+                    <h3 class="community-title neon-purple">Connect with Fellow Inventors</h3>
+                    <p class="community-description">
+                        Join thousands of strategic minds in our vibrant community. Share strategies, participate in tournaments, and help shape the future of Energy Field.
+                    </p>
+                </div>
+
+                <div class="community-features">
+                    <div class="community-card" data-aos="slide-up" data-aos-delay="100">
+                        <div class="community-icon neon-blue">💬</div>
+                        <h4>Discord Community</h4>
+                        <p>Join real-time discussions, find opponents, and get strategy tips from experienced players.</p>
+                        <a href="#" class="community-link">Join Discord</a>
+                    </div>
+
+                    <div class="community-card" data-aos="slide-up" data-aos-delay="200">
+                        <div class="community-icon neon-purple">🏆</div>
+                        <h4>Tournament Play</h4>
+                        <p>Compete in weekly tournaments, seasonal leagues, and special championship events.</p>
+                        <a href="#" class="community-link">View Tournaments</a>
+                    </div>
+
+                    <div class="community-card" data-aos="slide-up" data-aos-delay="300">
+                        <div class="community-icon neon-yellow">📚</div>
+                        <h4>Strategy Guides</h4>
+                        <p>Learn advanced techniques, deck building tips, and meta analysis from top players.</p>
+                        <a href="#" class="community-link">Read Guides</a>
+                    </div>
+
+                    <div class="community-card" data-aos="slide-up" data-aos-delay="400">
+                        <div class="community-icon neon-orange">🎮</div>
+                        <h4>Online Play</h4>
+                        <p>Play with friends or find new opponents through our online matching system.</p>
+                        <a href="#" class="community-link">Play Online</a>
+                    </div>
+                </div>
+
+                <div class="community-stats" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-item">
+                        <span class="stat-icon neon-blue">🎮</span>
+                        <span class="stat-count">10K+</span>
+                        <span class="stat-text">Active Players</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon neon-purple">⭐</span>
+                        <span class="stat-count">4.8/5</span>
+                        <span class="stat-text">Community Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon neon-yellow">🏆</span>
+                        <span class="stat-count">50+</span>
+                        <span class="stat-text">Weekly Tournaments</span>
                     </div>
                 </div>
             </div>
