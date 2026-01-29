@@ -157,13 +157,13 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: var(--neon-blue);
+    border-color: var(--accent-primary);
   }
 }
 
 .typewriter {
   overflow: hidden;
-  border-right: 0.15em solid var(--neon-blue);
+  border-right: 0.15em solid var(--accent-primary);
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
@@ -244,7 +244,7 @@ body {
   }
   100% {
     box-shadow:
-      0 15px 35px rgba(0, 212, 255, 0.3),
+      0 15px 35px rgba(255, 255, 0, 0.3),
       0 5px 15px rgba(0, 0, 0, 0.1);
   }
 }

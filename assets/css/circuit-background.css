@@ -1,0 +1,372 @@
+/* =================================================================== */
+/*                    TRON-INSPIRED CIRCUIT SYSTEM                    */
+/* =================================================================== */
+
+/* Circuit Background Container */
+.circuit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Integration with existing particle system */
+.circuit-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(0, 255, 65, 0.05) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 70%,
+    rgba(255, 255, 0, 0.3) 0%,
+    transparent 50%
+  );
+  z-index: -1;
+}
+
+/* Circuit Grid System */
+.circuit-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 0, 0.3) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+  opacity: 0.3;
+}
+
+/* Circuit Nodes */
+.circuit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  box-shadow:
+    0 0 10px var(--accent-primary),
+    0 0 20px var(--accent-primary),
+    0 0 30px rgba(0, 255, 65, 0.3);
+  animation: nodePulse 2s ease-in-out infinite;
+  z-index: 3;
+}
+
+.circuit-node::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: nodeRing 3s ease-in-out infinite;
+}
+
+.circuit-node.major {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-info);
+  box-shadow:
+    0 0 15px var(--accent-info),
+    0 0 30px var(--accent-info),
+    0 0 45px rgba(255, 255, 0, 0.3);
+}
+
+.circuit-node.major::before {
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  border-color: var(--accent-info);
+}
+
+/* Circuit Paths */
+.circuit-path {
+  position: absolute;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent-primary) 5%,
+    var(--accent-primary) 95%,
+    transparent 100%
+  );
+  height: 2px;
+  border-radius: 1px;
+  z-index: 2;
+  opacity: 0;
+  animation: circuitFlow 4s ease-in-out infinite;
+}
+
+.circuit-path.vertical {
+  background: linear-gradient(0deg,
+    transparent 0%,
+    var(--accent-primary) 5%,
+    var(--accent-primary) 95%,
+    transparent 100%
+  );
+  width: 2px;
+  height: auto;
+}
+
+.circuit-path.curve {
+  border-radius: 0;
+  background: var(--accent-primary);
+  height: 2px;
+}
+
+/* Circuit Corners (for 90-degree turns) */
+.circuit-corner {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  z-index: 2;
+}
+
+.circuit-corner.top-left {
+  border-top: 2px solid var(--accent-primary);
+  border-left: 2px solid var(--accent-primary);
+  border-top-left-radius: 8px;
+}
+
+.circuit-corner.top-right {
+  border-top: 2px solid var(--accent-primary);
+  border-right: 2px solid var(--accent-primary);
+  border-top-right-radius: 8px;
+}
+
+.circuit-corner.bottom-left {
+  border-bottom: 2px solid var(--accent-primary);
+  border-left: 2px solid var(--accent-primary);
+  border-bottom-left-radius: 8px;
+}
+
+.circuit-corner.bottom-right {
+  border-bottom: 2px solid var(--accent-primary);
+  border-right: 2px solid var(--accent-primary);
+  border-bottom-right-radius: 8px;
+}
+
+/* Circuit Data Flow Animation */
+.circuit-data {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-highlight);
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px var(--accent-highlight),
+    0 0 16px rgba(255, 255, 0, 0.5);
+  z-index: 4;
+  animation: dataFlow 6s linear infinite;
+}
+
+/* Circuit Branch Points */
+.circuit-junction {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-info);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-info);
+  z-index: 3;
+}
+
+.circuit-junction::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--accent-info);
+  border-radius: 50%;
+  animation: junctionPulse 1.5s ease-in-out infinite alternate;
+}
+
+/* Energy Surge Effects */
+.energy-surge {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent-highlight) 20%,
+    rgba(255, 255, 255, 0.8) 50%,
+    var(--accent-highlight) 80%,
+    transparent 100%
+  );
+  opacity: 0;
+  animation: energySurge 8s ease-in-out infinite;
+  z-index: 5;
+}
+
+/* Circuit Network Layers */
+.circuit-layer-1 {
+  opacity: 0.8;
+  filter: hue-rotate(0deg);
+}
+
+.circuit-layer-2 {
+  opacity: 0.6;
+  filter: hue-rotate(120deg);
+  animation-delay: -2s;
+}
+
+.circuit-layer-3 {
+  opacity: 0.4;
+  filter: hue-rotate(240deg);
+  animation-delay: -4s;
+}
+
+/* Animations */
+@keyframes nodePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes nodeRing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.2;
+  }
+}
+
+@keyframes circuitFlow {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  25% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes junctionPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes energySurge {
+  0%, 90% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Circuit Matrix Effect */
+.circuit-matrix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, transparent 79px, rgba(0, 255, 65, 0.03) 80px, rgba(0, 255, 65, 0.03) 81px, transparent 82px),
+    linear-gradient(0deg, transparent 79px, rgba(255, 255, 0, 0.3) 80px, rgba(255, 255, 0, 0.3) 81px, transparent 82px);
+  background-size: 80px 80px;
+  z-index: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .circuit-node {
+    width: 6px;
+    height: 6px;
+  }
+
+  .circuit-node.major {
+    width: 8px;
+    height: 8px;
+  }
+
+  .circuit-path {
+    height: 1px;
+  }
+
+  .circuit-path.vertical {
+    width: 1px;
+  }
+
+  .circuit-grid {
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+  }
+
+  .circuit-matrix {
+    background-size: 60px 60px;
+  }
+}
+
+/* Performance Optimizations */
+.circuit-background * {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: flat;
+}

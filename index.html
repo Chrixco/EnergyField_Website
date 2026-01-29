@@ -59,6 +59,9 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/animations.css">
     <link rel="stylesheet" href="./assets/css/neon-effects.css">
+    <link rel="stylesheet" href="./assets/css/electrical-effects.css">
+    <link rel="stylesheet" href="./assets/css/circuit-background.css">
+    <link rel="stylesheet" href="./assets/css/tutorial-styles.css">
 
     <!-- Scroll animations library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -191,6 +194,9 @@
                 <li class="nav-item">
                     <a href="#community" class="nav-link neon-hover">Community</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link neon-hover" id="tutorial-btn">Tutorial</a>
+                </li>
             </ul>
 
             <div class="nav-toggle" id="nav-toggle">
@@ -204,8 +210,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <div class="energy-particles"></div>
-            <div class="circuit-lines"></div>
+            <div class="energy-particles electrical-enhanced"></div>
+            <div class="circuit-lines electrical-enhanced"></div>
         </div>
 
         <div class="hero-content">
@@ -879,6 +885,120 @@
         </div>
     </footer>
 
+    <!-- Tutorial Modal -->
+    <div id="tutorial-modal" class="tutorial-modal">
+        <div class="tutorial-modal-backdrop" id="tutorial-modal-backdrop"></div>
+        <div class="tutorial-modal-content">
+            <div class="tutorial-modal-header">
+                <h2 class="tutorial-modal-title">Energy Field Tutorial</h2>
+                <button id="tutorial-modal-close" class="tutorial-modal-close">&times;</button>
+            </div>
+            <div class="tutorial-modal-body">
+                <div class="tutorial-navigation">
+                    <button class="tutorial-nav-btn active" data-tutorial-step="1">Game Setup</button>
+                    <button class="tutorial-nav-btn" data-tutorial-step="2">Card Types</button>
+                    <button class="tutorial-nav-btn" data-tutorial-step="3">Turn Structure</button>
+                    <button class="tutorial-nav-btn" data-tutorial-step="4">Victory</button>
+                </div>
+                <div class="tutorial-content-area">
+                    <!-- Step 1: Game Setup -->
+                    <div class="tutorial-step-content active" data-step="1">
+                        <h3>Getting Started</h3>
+                        <p>Energy Field is played with 5 card types across 7 game zones. Each player needs:</p>
+                        <ul>
+                            <li><strong>1 Inventor Card</strong> - Your character</li>
+                            <li><strong>50-Card Inventor's Deck</strong> - Contains Circuits, Tools, and Inventions</li>
+                            <li><strong>20-Card Energy Deck</strong> - Powers your network</li>
+                        </ul>
+                        <div class="tutorial-cards-demo">
+                            <div class="card-demo energy-card">⚡ Energy</div>
+                            <div class="card-demo circuit-card">🔌 Circuit</div>
+                            <div class="card-demo inventor-card">👨‍🔬 Inventor</div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Card Types -->
+                    <div class="tutorial-step-content" data-step="2">
+                        <h3>Five Card Types</h3>
+                        <div class="card-types-grid">
+                            <div class="card-type-item">
+                                <div class="card-demo energy-card">⚡</div>
+                                <h4>Energy Cards</h4>
+                                <p>Power your inventions and abilities</p>
+                            </div>
+                            <div class="card-type-item">
+                                <div class="card-demo circuit-card">🔌</div>
+                                <h4>Circuit Cards</h4>
+                                <p>Connect your network</p>
+                            </div>
+                            <div class="card-type-item">
+                                <div class="card-demo inventor-card">👨‍🔬</div>
+                                <h4>Inventor Cards</h4>
+                                <p>Your character with special abilities</p>
+                            </div>
+                            <div class="card-type-item">
+                                <div class="card-demo invention-card">⚙️</div>
+                                <h4>Invention Cards</h4>
+                                <p>Score victory points</p>
+                            </div>
+                            <div class="card-type-item">
+                                <div class="card-demo tool-card">🛠️</div>
+                                <h4>Tool Cards</h4>
+                                <p>Special abilities and effects</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Turn Structure -->
+                    <div class="tutorial-step-content" data-step="3">
+                        <h3>Turn Structure</h3>
+                        <div class="turn-phases">
+                            <div class="phase-item">
+                                <div class="phase-number">1</div>
+                                <div class="phase-content">
+                                    <h4>Draw Phase</h4>
+                                    <p>Draw one card from each deck (Inventor's Deck and Energy Deck)</p>
+                                </div>
+                            </div>
+                            <div class="phase-item">
+                                <div class="phase-number">2</div>
+                                <div class="phase-content">
+                                    <h4>Crafting Phase</h4>
+                                    <p>Play one Energy, one Circuit, unlimited Inventions and Tools. Activate abilities.</p>
+                                </div>
+                            </div>
+                            <div class="phase-item">
+                                <div class="phase-number">3</div>
+                                <div class="phase-content">
+                                    <h4>End Phase</h4>
+                                    <p>Discard down to 7 cards if needed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Victory -->
+                    <div class="tutorial-step-content" data-step="4">
+                        <h3>Winning the Game</h3>
+                        <div class="victory-info">
+                            <div class="victory-section">
+                                <h4>Game End Conditions</h4>
+                                <ul>
+                                    <li>Inventor's Deck runs out of cards</li>
+                                    <li>Invention Zone becomes full</li>
+                                </ul>
+                            </div>
+                            <div class="victory-section">
+                                <h4>Victory Points</h4>
+                                <p>The player with the most victory points wins! Points come from Invention cards played in your network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top neon-hover">
         <span>↑</span>
@@ -888,6 +1008,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/circuit-system.js"></script>
+    <script src="./assets/js/electrical-particles.js"></script>
+    <script src="./assets/js/tutorial-system.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/animations.js"></script>
     <script src="./assets/js/gallery.js"></script>

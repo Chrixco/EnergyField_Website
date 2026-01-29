@@ -60,6 +60,262 @@
   --bp-wide: 1200px;
 }
 
+/* Tutorial Modal Styles */
+.tutorial-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+.tutorial-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.tutorial-modal-content {
+  position: relative;
+  max-width: 900px;
+  max-height: 80vh;
+  margin: 5vh auto;
+  background: var(--bg-secondary);
+  border: 2px solid var(--neon-blue);
+  border-radius: 12px;
+  box-shadow: var(--shadow-intense);
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tutorial-header {
+  background: var(--gradient-primary);
+  padding: var(--space-md);
+  text-align: center;
+  position: relative;
+}
+
+.tutorial-title {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.tutorial-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.tutorial-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.tutorial-navigation {
+  display: flex;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--neon-blue);
+  overflow-x: auto;
+}
+
+.tutorial-nav-btn {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.tutorial-nav-btn:hover {
+  color: var(--text-primary);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.tutorial-nav-btn.active {
+  color: var(--neon-blue);
+  background: rgba(0, 212, 255, 0.2);
+}
+
+.tutorial-nav-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--neon-blue);
+}
+
+.tutorial-body {
+  padding: var(--space-md);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.tutorial-step {
+  display: none;
+}
+
+.tutorial-step.active {
+  display: block;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutorial-step h3 {
+  font-family: var(--font-primary);
+  color: var(--neon-yellow);
+  margin-bottom: var(--space-sm);
+  font-size: 1.3rem;
+}
+
+.tutorial-step h4 {
+  color: var(--neon-purple);
+  margin: var(--space-sm) 0 var(--space-xs) 0;
+  font-size: 1.1rem;
+}
+
+.tutorial-step p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.tutorial-step ul {
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.tutorial-step li {
+  margin-bottom: var(--space-xs);
+  color: var(--text-secondary);
+}
+
+.tutorial-step strong {
+  color: var(--neon-orange);
+  font-weight: 600;
+}
+
+.tutorial-step em {
+  color: var(--neon-green);
+  font-style: normal;
+}
+
+.tutorial-footer {
+  background: var(--bg-tertiary);
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tutorial-controls {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.tutorial-btn {
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+}
+
+.tutorial-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+}
+
+.tutorial-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.tutorial-progress {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Mobile responsiveness for tutorial */
+@media (max-width: 768px) {
+  .tutorial-modal-content {
+    margin: 2vh auto;
+    max-height: 90vh;
+    border-radius: 8px;
+  }
+
+  .tutorial-title {
+    font-size: 1.4rem;
+  }
+
+  .tutorial-nav-btn {
+    font-size: 0.8rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .tutorial-body {
+    padding: var(--space-sm);
+  }
+
+  .tutorial-step h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;

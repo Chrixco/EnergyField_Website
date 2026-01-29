@@ -14,6 +14,7 @@ function initializeApp() {
     // Initialize components after a short delay to show loading effect
     setTimeout(() => {
         initializeNavigation();
+        initializeTutorialModal();
         initializeScrollEffects();
         initializeAnimations();
         initializeButtons();
@@ -763,6 +764,123 @@ function createEnergyBurst(element) {
             burst.parentNode.removeChild(burst);
         }
     }, 600);
+}
+
+// Tutorial Modal System
+function initializeTutorialModal() {
+    const tutorialBtn = document.getElementById('tutorial-btn');
+    const tutorialModal = document.getElementById('tutorial-modal');
+    const tutorialBackdrop = document.getElementById('tutorial-modal-backdrop');
+    const tutorialClose = document.getElementById('tutorial-close');
+    const tutorialNavBtns = document.querySelectorAll('.tutorial-nav-btn');
+    const tutorialSteps = document.querySelectorAll('.tutorial-step');
+
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    // Show modal when tutorial button is clicked
+    if (tutorialBtn && tutorialModal) {
+        tutorialBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showTutorialModal();
+        });
+    }
+
+    // Close modal handlers
+    if (tutorialClose) {
+        tutorialClose.addEventListener('click', closeTutorialModal);
+    }
+
+    if (tutorialBackdrop) {
+        tutorialBackdrop.addEventListener('click', closeTutorialModal);
+    }
+
+    // Navigation button handlers
+    tutorialNavBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const step = parseInt(btn.dataset.tutorialStep);
+            if (step >= 1 && step <= totalSteps) {
+                showTutorialStep(step);
+            }
+        });
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!tutorialModal || tutorialModal.style.display === 'none') return;
+
+        switch (e.key) {
+            case 'Escape':
+                closeTutorialModal();
+                break;
+            case 'ArrowLeft':
+                if (currentStep > 1) showTutorialStep(currentStep - 1);
+                break;
+            case 'ArrowRight':
+                if (currentStep < totalSteps) showTutorialStep(currentStep + 1);
+                break;
+        }
+    });
+
+    function showTutorialModal() {
+        if (tutorialModal) {
+            tutorialModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            showTutorialStep(1);
+
+            // Add animation
+            setTimeout(() => {
+                tutorialModal.style.opacity = '1';
+            }, 10);
+
+            console.log('🎯 Tutorial modal opened');
+        }
+    }
+
+    function closeTutorialModal() {
+        if (tutorialModal) {
+            tutorialModal.style.opacity = '0';
+            document.body.style.overflow = '';
+
+            setTimeout(() => {
+                tutorialModal.style.display = 'none';
+            }, 300);
+
+            console.log('🎯 Tutorial modal closed');
+        }
+    }
+
+    function showTutorialStep(step) {
+        currentStep = step;
+
+        // Update navigation buttons
+        tutorialNavBtns.forEach(btn => {
+            const btnStep = parseInt(btn.dataset.tutorialStep);
+            if (btnStep === step) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        // Update step content
+        tutorialSteps.forEach((stepElement, index) => {
+            if (index + 1 === step) {
+                stepElement.classList.add('active');
+            } else {
+                stepElement.classList.remove('active');
+            }
+        });
+
+        console.log(`📖 Tutorial step ${step} activated`);
+    }
+
+    // Initialize first step
+    if (tutorialSteps.length > 0) {
+        showTutorialStep(1);
+    }
+
+    console.log('🎯 Tutorial modal system initialized');
 }
 
 // Export functions for use in other scripts
